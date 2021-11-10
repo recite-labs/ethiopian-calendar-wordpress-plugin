@@ -1,9 +1,9 @@
 === Ethiopian Calendar ===
 Contributors: Kibru Demeke
-Developer link: http://github.com/deqiq
+Developer link: http://github.com/dkibru
 Tags: calendar, ethiopian
 Requires at least: 3.0.1
-Tested up to: 5.5.1
+Tested up to: 5.8.1
 Stable tag: 1.0.0
 version: 1.0.0
 License: GPLv2 or later
