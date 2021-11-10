@@ -1,0 +1,12 @@
+{
+    "name": "askual/ameshash",
+    "authors": [
+        {
+            "name": "deqiq",
+            "email": "kibdemta@gmail.com"
+        }
+    ],
+    "require": {
+        "andegna/calender": "^2.1"
+    }
+}
