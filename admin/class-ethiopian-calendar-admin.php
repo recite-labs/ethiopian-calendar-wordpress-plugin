@@ -18,7 +18,7 @@
  *
  * @package    Ethiopian_Calendar
  * @subpackage Ethiopian_Calendar/admin
- * @author     Askual Tech <info@askual.com>
+ * @author     Kibru Demeke <kibdemta@gmail.com>
  */
 class Ethiopian_Calendar_Admin {
 

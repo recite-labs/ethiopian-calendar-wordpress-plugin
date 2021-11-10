@@ -19,7 +19,7 @@
  *
  * @package    Ethiopian_Calendar
  * @subpackage Ethiopian_Calendar/includes
- * @author     Askual Tech <info@askual.com>
+ * @author     Kibru Demeke <kibdemta@gmail.com>
  */
 class Ethiopian_Calendar_Loader {
 
