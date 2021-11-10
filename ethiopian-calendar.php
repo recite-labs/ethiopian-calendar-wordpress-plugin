@@ -8,7 +8,7 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://askual.com
+ * @link              http://dkibru.github.io
  * @since             1.0.0
  * @package           Ethiopian_Calendar
  *

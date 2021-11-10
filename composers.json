@@ -1,14 +1,14 @@
 {
-    "name": "askual/ameshash",
+    "name": "dKibru/ethiopian-calendar-wordpress-plugin",
     "authors": [
         {
-            "name": "Askual Technologies",
-            "email": "info@askual.com"
+            "name": "Kibru Demeke",
+            "email": "kibdemta@gmail.com"
         }
     ],
     "require": {
         "php": ">=7.1.3",
-        "andegna/calender": "^2.1",
+        "andegna/calender": "^2.1"
     },
     "autoload": {
         "psr-4": {
