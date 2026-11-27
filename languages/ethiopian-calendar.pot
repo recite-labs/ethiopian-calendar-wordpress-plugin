@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-27T20:22:10+00:00\n"
+"POT-Creation-Date: 2026-11-27T20:36:45+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ethiopian-calendar\n"
@@ -108,14 +108,18 @@ msgstr ""
 msgid "Calendar shortcode"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:161
-msgid "Shows a month calendar with Gregorian dates alongside."
+#: src/Admin/SettingsPage.php:168
+msgid "Default language and numerals for the month calendar. Add it to any page with"
 msgstr ""
 
-#: src/Frontend/CalendarShortcode.php:75
+#: src/Admin/SettingsPage.php:169
+msgid "or override per calendar:"
+msgstr ""
+
+#: src/Frontend/CalendarShortcode.php:83
 msgid "Previous month"
 msgstr ""
 
-#: src/Frontend/CalendarShortcode.php:80
+#: src/Frontend/CalendarShortcode.php:88
 msgid "Next month"
 msgstr ""

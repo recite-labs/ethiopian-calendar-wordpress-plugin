@@ -56,12 +56,14 @@ final class Settings {
 	 */
 	public static function defaults(): array {
 		return array(
-			'schema'        => self::SCHEMA,
-			'language'      => 'en',
-			'numerals'      => 'arabic',
-			'preset'        => '1',
-			'custom_format' => '',
-			'convert'       => array_fill_keys( self::SURFACES, true ),
+			'schema'            => self::SCHEMA,
+			'language'          => 'en',
+			'numerals'          => 'arabic',
+			'preset'            => '1',
+			'custom_format'     => '',
+			'convert'           => array_fill_keys( self::SURFACES, true ),
+			'calendar_language' => 'en',
+			'calendar_numerals' => 'arabic',
 		);
 	}
 
@@ -120,6 +122,12 @@ final class Settings {
 		if ( isset( $input['custom_format'] ) && is_string( $input['custom_format'] ) ) {
 			$out['custom_format'] = trim( wp_strip_all_tags( $input['custom_format'] ) );
 		}
+		if ( isset( $input['calendar_language'] ) && in_array( $input['calendar_language'], Formatter::LANGUAGES, true ) ) {
+			$out['calendar_language'] = $input['calendar_language'];
+		}
+		if ( isset( $input['calendar_numerals'] ) && in_array( $input['calendar_numerals'], Formatter::NUMERALS, true ) ) {
+			$out['calendar_numerals'] = $input['calendar_numerals'];
+		}
 		if ( isset( $input['convert'] ) && is_array( $input['convert'] ) ) {
 			foreach ( self::SURFACES as $surface ) {
 				$out['convert'][ $surface ] = ! empty( $input['convert'][ $surface ] );
@@ -130,28 +138,56 @@ final class Settings {
 	}
 
 	/**
-	 * Create defaults on first run, or carry over 1.x settings. Safe to call on every load.
+	 * Create or upgrade the settings. Safe to call on every load.
+	 *
+	 * Upgrades from 1.x keep their behaviour: in 1.1.x, converting post dates was
+	 * a setting ("cts") that was off unless turned on, and the defaults were
+	 * Amharic, format 2, and an Amharic calendar with Ge'ez numerals.
+	 *
+	 * @param bool $fresh_install True when called from activation, where a site with
+	 *                            no settings at all is a new install rather than a
+	 *                            1.1.x site that never saved its settings.
 	 */
-	public static function maybeMigrate(): void {
+	public static function maybeMigrate( bool $fresh_install = false ): void {
 		$current = get_option( self::OPTION );
 		if ( is_array( $current ) && ( $current['schema'] ?? 0 ) >= self::SCHEMA ) {
 			return;
 		}
 
-		$settings = self::defaults();
-		$legacy   = get_option( self::LEGACY_OPTION );
+		$legacy = get_option( self::LEGACY_OPTION );
 		if ( is_array( $legacy ) ) {
-			$settings = self::sanitize(
-				array(
-					'language' => $legacy['language'] ?? 'en',
-					'preset'   => (string) ( $legacy['format'] ?? '1' ),
-					// 1.x only converted post dates; keep upgrades from changing other dates silently.
-					'convert'  => array( 'post_date' => true ),
-				)
-			);
-			delete_option( self::LEGACY_OPTION );
+			// 1.0.x had no "cts" switch and always converted post dates.
+			$post_date = isset( $legacy['cts'] ) ? 'y' === $legacy['cts'] : ! isset( $legacy['cl'] );
+			$settings  = self::legacySettings( $legacy, $post_date );
+		} elseif ( $fresh_install ) {
+			$settings = self::defaults();
+		} else {
+			// Updated from 1.1.x without ever saving settings: nothing was converted.
+			$settings = self::legacySettings( array(), false );
 		}
 
 		update_option( self::OPTION, $settings );
+		delete_option( self::LEGACY_OPTION );
+		delete_option( 'wpp_dismissed' ); // Leftover from the 1.x activation notice.
+	}
+
+	/**
+	 * Map 1.x settings onto the current schema, using 1.1.x defaults for missing keys.
+	 *
+	 * @param array<string, mixed> $legacy    1.x option value.
+	 * @param bool                 $post_date Whether post dates were converted.
+	 * @return array<string, mixed>
+	 */
+	private static function legacySettings( array $legacy, bool $post_date ): array {
+		return self::sanitize(
+			array(
+				'language'          => $legacy['language'] ?? 'am',
+				'preset'            => (string) ( $legacy['format'] ?? '2' ),
+				'calendar_language' => $legacy['cl'] ?? 'am',
+				'calendar_numerals' => $legacy['cn'] ?? 'geez',
+				// 1.x never converted updated or comment dates.
+				'convert'           => array( 'post_date' => $post_date ),
+			)
+		);
 	}
 }

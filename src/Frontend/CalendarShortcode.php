@@ -16,6 +16,7 @@ use EthiopianCalendar\Settings;
  * Renders a month grid using the same PHP engine as the date filters.
  *
  * Usage: [ethcalendar], [ethcalendar language="am" numerals="geez"], [ethcalendar month="2019-1"].
+ * The 1.1.x attribute names lang="" and numeral="" still work.
  * Visitors move between months with a query argument, so any number of calendars
  * can share a page and no JavaScript is needed.
  */
@@ -44,16 +45,23 @@ final class CalendarShortcode {
 	 * @param array<string, string>|string $atts Attributes.
 	 */
 	public static function render( $atts ): string {
-		$settings = Settings::all();
-		$atts     = shortcode_atts(
+		$settings         = Settings::all();
+		$atts             = shortcode_atts(
 			array(
-				'language' => $settings['language'],
-				'numerals' => $settings['numerals'],
+				'language' => '',
+				'numerals' => '',
+				'lang'     => '',
+				'numeral'  => '',
 				'month'    => '',
 			),
 			is_array( $atts ) ? $atts : array(),
 			self::TAG
 		);
+		$atts['language'] = $atts['language'] ? $atts['language'] : ( $atts['lang'] ? $atts['lang'] : $settings['calendar_language'] );
+		$atts['numerals'] = $atts['numerals'] ? $atts['numerals'] : ( $atts['numeral'] ? $atts['numeral'] : $settings['calendar_numerals'] );
+		if ( ! in_array( $atts['language'], Formatter::LANGUAGES, true ) ) {
+			$atts['language'] = 'en';
+		}
 
 		$formatter        = new Formatter( $atts['language'], $atts['numerals'] );
 		$today            = EthiopianDate::fromDateTime( current_datetime() );

@@ -157,8 +157,17 @@ final class SettingsPage {
 					<tr>
 						<th scope="row"><?php esc_html_e( 'Calendar shortcode', 'ethiopian-calendar' ); ?></th>
 						<td>
-							<code>[ethcalendar]</code> &nbsp; <code>[ethcalendar language="am" numerals="geez"]</code>
-							<p class="description"><?php esc_html_e( 'Shows a month calendar with Gregorian dates alongside.', 'ethiopian-calendar' ); ?></p>
+							<fieldset>
+								<label><input type="radio" name="<?php echo esc_attr( $name ); ?>[calendar_language]" value="en" <?php checked( 'en', $settings['calendar_language'] ); ?>> English</label>
+								&nbsp; <label><input type="radio" name="<?php echo esc_attr( $name ); ?>[calendar_language]" value="am" <?php checked( 'am', $settings['calendar_language'] ); ?>> አማርኛ</label>
+								<br>
+								<label><input type="radio" name="<?php echo esc_attr( $name ); ?>[calendar_numerals]" value="arabic" <?php checked( 'arabic', $settings['calendar_numerals'] ); ?>> 1 2 3</label>
+								&nbsp; <label><input type="radio" name="<?php echo esc_attr( $name ); ?>[calendar_numerals]" value="geez" <?php checked( 'geez', $settings['calendar_numerals'] ); ?>> ፩ ፪ ፫</label>
+							</fieldset>
+							<p class="description">
+								<?php esc_html_e( 'Default language and numerals for the month calendar. Add it to any page with', 'ethiopian-calendar' ); ?>
+								<code>[ethcalendar]</code>, <?php esc_html_e( 'or override per calendar:', 'ethiopian-calendar' ); ?> <code>[ethcalendar language="am" numerals="geez"]</code>
+							</p>
 						</td>
 					</tr>
 				</table>

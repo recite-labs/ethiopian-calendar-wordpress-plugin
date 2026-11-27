@@ -34,7 +34,7 @@ final class Plugin {
 	 * Activation hook.
 	 */
 	public static function activate(): void {
-		Settings::maybeMigrate();
+		Settings::maybeMigrate( true );
 	}
 
 	/**

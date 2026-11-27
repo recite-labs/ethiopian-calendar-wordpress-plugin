@@ -18,20 +18,55 @@ final class SettingsTest extends TestCase {
 	}
 
 	public function testFreshInstallGetsDefaults(): void {
-		Settings::maybeMigrate();
+		Settings::maybeMigrate( true );
 		$this->assertSame( Settings::defaults(), get_option( Settings::OPTION ) );
 		$this->assertSame( 'jS F, Y E', Settings::formatString() );
 	}
 
-	public function testMigratesLegacySettingsAndKeepsOnlyPostDates(): void {
-		update_option( Settings::LEGACY_OPTION, array( 'language' => 'am', 'format' => '3' ) );
+	public function testUpgradeFrom110WithSavedSettings(): void {
+		// Option as saved by the 1.1.1 settings screen.
+		update_option( Settings::LEGACY_OPTION, array( 'cts' => 'y', 'format' => '1', 'language' => 'en', 'cn' => 'arabic', 'cl' => 'en' ) );
+		update_option( 'wpp_dismissed', 0 );
 		Settings::maybeMigrate();
 
 		$settings = get_option( Settings::OPTION );
-		$this->assertSame( 'am', $settings['language'] );
-		$this->assertSame( '3', $settings['preset'] );
+		$this->assertSame( 'en', $settings['language'] );
+		$this->assertSame( '1', $settings['preset'] );
+		$this->assertSame( 'en', $settings['calendar_language'] );
+		$this->assertSame( 'arabic', $settings['calendar_numerals'] );
 		$this->assertSame( array( 'post_date' => true, 'modified_date' => false, 'comment_date' => false ), $settings['convert'] );
 		$this->assertFalse( get_option( Settings::LEGACY_OPTION ) );
+		$this->assertFalse( get_option( 'wpp_dismissed' ) );
+	}
+
+	public function testUpgradeFrom110WithConversionOffKeepsItOff(): void {
+		update_option( Settings::LEGACY_OPTION, array( 'cts' => 'n', 'format' => '3', 'language' => 'am' ) );
+		Settings::maybeMigrate();
+
+		$settings = get_option( Settings::OPTION );
+		$this->assertFalse( $settings['convert']['post_date'] );
+		$this->assertSame( 'am', $settings['language'] );
+		$this->assertSame( '3', $settings['preset'] );
+		$this->assertSame( 'am', $settings['calendar_language'] );
+		$this->assertSame( 'geez', $settings['calendar_numerals'] );
+	}
+
+	public function testUpgradeFrom110NeverSavedConvertsNothing(): void {
+		Settings::maybeMigrate();
+
+		$settings = get_option( Settings::OPTION );
+		$this->assertSame( array( 'post_date' => false, 'modified_date' => false, 'comment_date' => false ), $settings['convert'] );
+		$this->assertSame( 'am', $settings['language'] );
+		$this->assertSame( '2', $settings['preset'] );
+	}
+
+	public function testUpgradeFrom100AlwaysConvertedPostDates(): void {
+		update_option( Settings::LEGACY_OPTION, array( 'language' => 'en', 'format' => '4' ) );
+		Settings::maybeMigrate();
+
+		$settings = get_option( Settings::OPTION );
+		$this->assertTrue( $settings['convert']['post_date'] );
+		$this->assertSame( '4', $settings['preset'] );
 	}
 
 	public function testMigrationRunsOnce(): void {

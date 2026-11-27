@@ -1,5 +1,5 @@
 === Ethiopian Calendar ===
-Contributors: Kibru Demeke
+Contributors: deqiq
 Tags: ethiopian calendar, ethiopia, amharic, calendar, date
 Requires at least: 6.4
 Tested up to: 7.1
@@ -18,7 +18,7 @@ Ethiopian Calendar converts the dates your site shows into the Ethiopian calenda
 * Works with block themes (Post Date and Comment Date blocks) and classic themes.
 * English or Amharic month and weekday names, with Arabic or Ge'ez numerals.
 * Five ready-made formats or your own, e.g. "17th Meskerem, 2019 E.C." or "እሑድ፣ መስከረም ፲፯ ቀን ፳፻፲፱".
-* `[ethcalendar]` shortcode: a month calendar with Gregorian dates alongside. Use `[ethcalendar language="am" numerals="geez"]` for Amharic.
+* `[ethcalendar]` shortcode: a month calendar with Gregorian dates alongside, in English or Amharic with its own default language and numerals. Override per calendar with `[ethcalendar language="am" numerals="geez"]`.
 * Feeds, sitemaps, schema.org data and `datetime` attributes stay Gregorian, so search engines and other tools keep reading your dates correctly.
 
 == Installation ==
@@ -53,7 +53,11 @@ Yes. Pick "Custom" and use tokens: d j (day), m n (month number), F M (month nam
 * Fixed: machine-readable dates (datetime attributes, schema.org) were converted.
 * New: Ge'ez numerals, a weekday format, custom formats, and switches for updated and comment dates.
 * New: the calendar shortcode is rendered on the server, supports several calendars per page and Amharic, and shows Gregorian dates.
-* Settings from 1.x are carried over automatically. Settings are removed when the plugin is deleted.
+* Settings from 1.x are carried over automatically, including whether dates were converted and the calendar's language and numerals. The 1.1 shortcode attributes `lang` and `numeral` still work.
+* Settings are removed when the plugin is deleted.
+
+= 1.1.1 =
+* Calendar language and numeral settings; option to turn date conversion on or off.
 
 = 1.0.0 =
 * First release.
