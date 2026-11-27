@@ -40,7 +40,7 @@ Yes. Pick "Custom" and use tokens: d j (day), m n (month number), F M (month nam
 == Screenshots ==
 
 1. The month calendar in English and Amharic with Ge'ez numerals.
-2. Settings.
+2. Settings, with a live preview of how dates will look.
 
 == Changelog ==
 
@@ -51,6 +51,7 @@ Yes. Pick "Custom" and use tokens: d j (day), m n (month number), F M (month nam
 * Fixed: English dates were labelled "A.D"; they now use "E.C.".
 * Fixed: PHP warnings before settings were first saved.
 * Fixed: machine-readable dates (datetime attributes, schema.org) were converted.
+* New: redesigned settings screen with live previews.
 * New: Ge'ez numerals, a weekday format, custom formats, and switches for updated and comment dates.
 * New: the calendar shortcode is rendered on the server, supports several calendars per page and Amharic, and shows Gregorian dates.
 * Settings from 1.x are carried over automatically, including whether dates were converted and the calendar's language and numerals. The 1.1 shortcode attributes `lang` and `numeral` still work.

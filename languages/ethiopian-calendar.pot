@@ -9,16 +9,16 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-27T20:36:45+00:00\n"
+"POT-Creation-Date: 2026-11-27T20:48:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ethiopian-calendar\n"
 
 #. Plugin Name of the plugin
 #: ethiopian-calendar.php:3
-#: src/Admin/SettingsPage.php:35
-#: src/Admin/SettingsPage.php:36
-#: src/Admin/SettingsPage.php:88
+#: src/Admin/SettingsPage.php:50
+#: src/Admin/SettingsPage.php:51
+#: src/Admin/SettingsPage.php:169
 msgid "Ethiopian Calendar"
 msgstr ""
 
@@ -42,78 +42,163 @@ msgstr ""
 msgid "https://github.com/dkibru"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:65
+#: src/Admin/SettingsPage.php:92
+msgid "Copied"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:93
+#: src/Admin/SettingsPage.php:317
+msgid "Copy"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:94
+msgid "You have unsaved changes"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:95
+#: src/Admin/SettingsPage.php:324
+msgid "All changes saved"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:107
 msgid "Settings"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:82
+#: src/Admin/SettingsPage.php:163
 msgid "Post published dates"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:83
+#: src/Admin/SettingsPage.php:163
+msgid "Blog lists, single posts and archive pages"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:164
 msgid "Post updated dates"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:84
+#: src/Admin/SettingsPage.php:164
+msgid "\"Last updated\" lines, where your theme shows them"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:165
 msgid "Comment dates"
 msgstr ""
 
-#. translators: %s: today's date in the Ethiopian calendar.
-#: src/Admin/SettingsPage.php:93
-#, php-format
-msgid "Today: %s"
+#: src/Admin/SettingsPage.php:165
+msgid "Under each comment"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:103
+#: src/Admin/SettingsPage.php:174
+msgid "Ethiopian Calendar · Today"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:182
+msgid "How readers see a post"
+msgstr ""
+
+#. translators: %s: the sample post's date in the Gregorian calendar.
+#: src/Admin/SettingsPage.php:188
+#, php-format
+msgid "Feeds and Google still see %s"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:200
 msgid "Language"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:112
-msgid "Numerals"
+#: src/Admin/SettingsPage.php:201
+msgid "Month and weekday names, and the numbers they're written with."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:115
-msgid "Arabic"
+#: src/Admin/SettingsPage.php:206
+#: src/Admin/SettingsPage.php:296
+msgid "Names"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:116
-msgid "Ge'ez"
+#: src/Admin/SettingsPage.php:215
+#: src/Admin/SettingsPage.php:305
+msgid "Numbers"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:121
+#: src/Admin/SettingsPage.php:229
+#: src/Admin/SettingsPage.php:234
 msgid "Date format"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:133
-msgid "Custom:"
+#: src/Admin/SettingsPage.php:230
+msgid "Shown with today's date. Pick one, or write your own with tokens."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:137
-msgid "Preview:"
+#: src/Admin/SettingsPage.php:244
+msgid "Custom"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:140
-msgid "Tokens: d j (day), m n (month number), F M (month name), Y y (year), l D (weekday), S (st/nd/rd/th), E (era: E.C. or ዓ.ም.). Time tokens such as g:i a work as in WordPress. Use \\ to print a token letter literally."
+#: src/Admin/SettingsPage.php:246
+msgid "Custom format"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:146
-msgid "Show Ethiopian dates for"
+#: src/Admin/SettingsPage.php:252
+msgid "Token reference"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:153
-msgid "Machine-readable dates (feeds, sitemaps, schema.org, datetime attributes) always stay Gregorian."
+#: src/Admin/SettingsPage.php:254
+msgid "Day, with or without a leading zero"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:158
-msgid "Calendar shortcode"
+#: src/Admin/SettingsPage.php:255
+msgid "Month number, with or without a leading zero"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:168
-msgid "Default language and numerals for the month calendar. Add it to any page with"
+#: src/Admin/SettingsPage.php:256
+msgid "Month name, full or short"
 msgstr ""
 
-#: src/Admin/SettingsPage.php:169
-msgid "or override per calendar:"
+#: src/Admin/SettingsPage.php:257
+msgid "Year, four or two digits"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:258
+msgid "Weekday, full or short"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:259
+msgid "English ordinal suffix: st, nd, rd, th"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:260
+msgid "Era: E.C. or ዓ.ም."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:261
+msgid "Time tokens work as in WordPress. Use \\ to print a letter as is."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:269
+msgid "Where to show Ethiopian dates"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:270
+msgid "Feeds, sitemaps and search engines always get the Gregorian date."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:289
+msgid "Month calendar"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:290
+msgid "Paste the shortcode into any page or post. Gregorian dates appear under each day."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:325
+msgid "Discard"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:326
+msgid "Save changes"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:379
+msgid "Your latest post"
 msgstr ""
 
 #: src/Frontend/CalendarShortcode.php:83

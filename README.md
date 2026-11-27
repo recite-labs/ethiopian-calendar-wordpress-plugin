@@ -25,7 +25,11 @@ bin/build.sh         # dist/ethiopian-calendar.zip for release
 | `src/Settings.php` | Option schema, defaults, sanitizing, 1.x migration |
 | `src/Frontend/DateFilters.php` | Converts post, modified and comment dates (classic filters and blocks) |
 | `src/Frontend/CalendarShortcode.php` | `[ethcalendar]` month view |
-| `src/Admin/SettingsPage.php` | Settings screen |
+| `src/Admin/SettingsPage.php` | Settings screen (previews rendered in PHP; `assets/js/admin.js` only swaps them in) |
+| `assets/css/admin.css`, `assets/js/admin.js` | Settings screen styles and progressive enhancement |
+| `.wordpress-org/` | Directory icon, banner and screenshots (deployed to SVN `/assets`, not shipped in the zip) |
+
+Design source: the Paper file "Ethiopian Calendar — WordPress plugin" (settings page, icon, banner).
 
 The plugin has no runtime dependencies; `vendor/` is for development only and is not shipped.
 

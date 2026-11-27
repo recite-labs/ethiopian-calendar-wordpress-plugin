@@ -1,0 +1,484 @@
+/* Ethiopian Calendar settings screen. Palette "alpine": snow, ink, evergreen. */
+.ethcal-admin {
+	--ethcal-ink: #1d2327;
+	--ethcal-slate: #50575e;
+	--ethcal-frost: #dcdcde;
+	--ethcal-field: #8c8f94;
+	--ethcal-evergreen: #0b5d45;
+	--ethcal-evergreen-tint: #e6f1ec;
+	--ethcal-gold: #dba617;
+	/* WordPress admin system fonts, with Ethiopic fonts as fallback for Amharic. */
+	--ethcal-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", "Noto Sans Ethiopic", "Abyssinica SIL", Nyala, Kefa, Ebrima, sans-serif;
+	--ethcal-ethiopic: "Noto Sans Ethiopic", "Abyssinica SIL", Nyala, Kefa, Ebrima, sans-serif;
+	--ethcal-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Noto Sans Ethiopic", Nyala, Kefa, Ebrima, monospace;
+	max-width: 1040px;
+	margin: 40px 20px 0 28px;
+	color: var(--ethcal-ink);
+	font-family: var(--ethcal-font);
+	font-size: 14px;
+}
+.ethcal-admin p {
+	margin: 0;
+}
+
+/* Hero */
+.ethcal-hero {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 48px;
+	padding-bottom: 32px;
+	border-bottom: 1px solid var(--ethcal-frost);
+}
+.ethcal-eyebrow {
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--ethcal-evergreen);
+}
+.ethcal-hero__date {
+	margin-top: 12px !important;
+	font-family: var(--ethcal-ethiopic);
+	font-size: clamp(32px, 4.2vw, 56px);
+	font-weight: 700;
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+}
+.ethcal-hero__sub {
+	margin-top: 12px !important;
+	font-size: 16px;
+	line-height: 24px;
+	color: var(--ethcal-slate);
+}
+.ethcal-hero__sub strong {
+	color: var(--ethcal-ink);
+}
+.ethcal-preview {
+	flex: 0 0 300px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 20px;
+	background: #fff;
+	border: 1px solid var(--ethcal-frost);
+	border-radius: 8px;
+}
+.ethcal-preview__label {
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--ethcal-slate);
+}
+.ethcal-preview__title {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 24px;
+}
+.ethcal-preview__date {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	color: var(--ethcal-evergreen);
+}
+.ethcal-preview__note {
+	font-size: 12px;
+	line-height: 16px;
+	color: var(--ethcal-slate);
+}
+
+/* Sections */
+.ethcal-section {
+	display: flex;
+	gap: 48px;
+	padding: 32px 0;
+	border-bottom: 1px solid var(--ethcal-frost);
+}
+.ethcal-section--last {
+	border-bottom: 0;
+}
+.ethcal-section__label {
+	flex: 0 0 280px;
+}
+.ethcal-section__label h2 {
+	margin: 0 0 6px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	color: var(--ethcal-ink);
+}
+.ethcal-section__label p {
+	font-size: 14px;
+	line-height: 20px;
+	color: var(--ethcal-slate);
+}
+.ethcal-section__controls {
+	flex: 1 1 auto;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.ethcal-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 32px;
+}
+
+/* Segmented control */
+.ethcal-segmented {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	min-width: 0;
+}
+.ethcal-segmented legend {
+	margin-bottom: 8px;
+	padding: 0;
+	font-size: 13px;
+	font-weight: 500;
+	color: var(--ethcal-slate);
+}
+.ethcal-segmented__track {
+	display: inline-flex;
+	gap: 2px;
+	padding: 3px;
+	background: #fff;
+	border: 1px solid var(--ethcal-frost);
+	border-radius: 8px;
+}
+.ethcal-segmented label {
+	position: relative;
+	cursor: pointer;
+}
+.ethcal-segmented input,
+.ethcal-format > input,
+.ethcal-switch input[type="checkbox"] {
+	position: absolute;
+	opacity: 0;
+	width: 1px;
+	height: 1px;
+	margin: 0;
+}
+.ethcal-segmented label > span {
+	display: block;
+	padding: 6px 16px;
+	border-radius: 6px;
+	font-size: 14px;
+	line-height: 20px;
+	white-space: pre;
+	color: var(--ethcal-ink);
+}
+.ethcal-segmented label:hover > span {
+	background: var(--ethcal-evergreen-tint);
+}
+.ethcal-segmented input:checked + span {
+	background: var(--ethcal-evergreen);
+	color: #fff;
+	font-weight: 600;
+}
+.ethcal-segmented input:focus-visible + span {
+	outline: 2px solid var(--ethcal-evergreen);
+	outline-offset: 2px;
+}
+
+/* Format list */
+.ethcal-formats {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	border: 1px solid var(--ethcal-frost);
+	border-radius: 8px;
+	overflow: hidden;
+}
+.ethcal-format {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 14px 20px;
+	border-bottom: 1px solid var(--ethcal-frost);
+	cursor: pointer;
+}
+.ethcal-format:last-child {
+	border-bottom: 0;
+}
+.ethcal-format::before {
+	content: "";
+	flex: 0 0 18px;
+	height: 18px;
+	box-sizing: border-box;
+	border-radius: 50%;
+	border: 1.5px solid var(--ethcal-field);
+	background: #fff;
+}
+.ethcal-format:has(> input:checked) {
+	background: var(--ethcal-evergreen-tint);
+}
+.ethcal-format:has(> input:checked)::before {
+	border: 5px solid var(--ethcal-evergreen);
+}
+.ethcal-format:has(> input:focus-visible) {
+	outline: 2px solid var(--ethcal-evergreen);
+	outline-offset: -2px;
+}
+.ethcal-format__preview {
+	flex: 1 1 auto;
+	font-size: 15px;
+	line-height: 22px;
+}
+.ethcal-format:has(> input:checked) .ethcal-format__preview {
+	font-weight: 600;
+}
+.ethcal-format__code {
+	flex: 0 0 auto;
+	min-width: 120px;
+	padding: 0;
+	background: none;
+	font-family: var(--ethcal-mono);
+	font-size: 12px;
+	text-align: right;
+	color: var(--ethcal-slate);
+}
+.ethcal-format:has(> input:checked) .ethcal-format__code {
+	color: var(--ethcal-evergreen);
+}
+.ethcal-format--custom {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.ethcal-format__name {
+	flex: 0 0 64px;
+	font-size: 15px;
+	line-height: 22px;
+	cursor: pointer;
+}
+.ethcal-format__field {
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	min-width: 0;
+}
+.ethcal-format__field input[type="text"] {
+	flex: 1 1 auto;
+	min-width: 0;
+	height: 36px;
+	padding: 0 12px;
+	border: 1px solid var(--ethcal-field);
+	border-radius: 6px;
+	font-family: var(--ethcal-mono);
+	font-size: 13px;
+}
+.ethcal-format__field input[type="text"]:focus {
+	border-color: var(--ethcal-evergreen);
+	box-shadow: 0 0 0 1px var(--ethcal-evergreen);
+}
+.ethcal-format__custom-preview {
+	flex: 0 1 auto;
+	font-size: 14px;
+	color: var(--ethcal-evergreen);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Token reference */
+.ethcal-tokens summary {
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 500;
+	color: var(--ethcal-evergreen);
+	cursor: pointer;
+}
+.ethcal-tokens dl {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	gap: 8px 20px;
+	margin: 12px 0 0;
+	padding: 16px 20px;
+	background: #fff;
+	border: 1px solid var(--ethcal-frost);
+	border-radius: 8px;
+}
+.ethcal-tokens dt code {
+	font-family: var(--ethcal-mono);
+	font-size: 12px;
+}
+.ethcal-tokens dd {
+	margin: 0;
+	color: var(--ethcal-slate);
+}
+
+/* Switches */
+.ethcal-switches {
+	gap: 4px;
+}
+.ethcal-switch {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 10px 0;
+	cursor: pointer;
+}
+.ethcal-switch__track {
+	position: relative;
+	flex: 0 0 36px;
+	height: 20px;
+	border-radius: 10px;
+	background: #c3c4c7;
+	transition: background 0.15s;
+}
+.ethcal-switch__track::after {
+	content: "";
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #fff;
+	transition: transform 0.15s;
+}
+.ethcal-switch input:checked ~ .ethcal-switch__track {
+	background: var(--ethcal-evergreen);
+}
+.ethcal-switch input:checked ~ .ethcal-switch__track::after {
+	transform: translateX(16px);
+}
+.ethcal-switch input:focus-visible ~ .ethcal-switch__track {
+	outline: 2px solid var(--ethcal-evergreen);
+	outline-offset: 2px;
+}
+.ethcal-switch__text {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+.ethcal-switch__label {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+}
+.ethcal-switch__help {
+	font-size: 13px;
+	line-height: 18px;
+	color: var(--ethcal-slate);
+}
+
+/* Shortcode */
+.ethcal-shortcode {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	width: min(420px, 100%);
+	padding: 6px 6px 6px 16px;
+	box-sizing: border-box;
+	background: var(--ethcal-ink);
+	border-radius: 8px;
+}
+.ethcal-shortcode code {
+	flex: 1 1 auto;
+	padding: 0;
+	background: none;
+	font-family: var(--ethcal-mono);
+	font-size: 14px;
+	color: #f0f0f1;
+}
+.ethcal-shortcode__copy {
+	padding: 6px 14px;
+	border: 0;
+	border-radius: 6px;
+	background: #fff;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--ethcal-ink);
+	cursor: pointer;
+}
+.ethcal-shortcode__copy:hover {
+	background: var(--ethcal-evergreen-tint);
+}
+
+/* Save bar */
+.ethcal-savebar {
+	position: sticky;
+	bottom: 16px;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin: 0 0 24px;
+	padding: 12px 12px 12px 20px;
+	background: #fff;
+	border: 1px solid var(--ethcal-frost);
+	border-radius: 8px;
+	box-shadow: 0 4px 16px rgba(29, 35, 39, 0.06);
+}
+.ethcal-savebar__dot {
+	flex: 0 0 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--ethcal-evergreen);
+}
+.ethcal-savebar.is-dirty .ethcal-savebar__dot {
+	background: var(--ethcal-gold);
+}
+.ethcal-savebar__status {
+	flex: 1 1 auto;
+	color: var(--ethcal-slate);
+}
+.ethcal-savebar.is-dirty .ethcal-savebar__status {
+	color: var(--ethcal-ink);
+}
+.ethcal-button {
+	padding: 10px 20px;
+	border: 0;
+	border-radius: 6px;
+	font-size: 14px;
+	line-height: 20px;
+	cursor: pointer;
+}
+.ethcal-button--quiet {
+	padding: 8px 12px;
+	background: none;
+	color: var(--ethcal-slate);
+}
+.ethcal-button--quiet:hover {
+	color: var(--ethcal-ink);
+}
+.ethcal-button--primary {
+	background: var(--ethcal-evergreen);
+	color: #fff;
+	font-weight: 600;
+}
+.ethcal-button--primary:hover {
+	background: #084a37;
+}
+.ethcal-button:focus-visible {
+	outline: 2px solid var(--ethcal-evergreen);
+	outline-offset: 2px;
+}
+.ethcal-savebar:not(.is-dirty) [data-ethcal-discard] {
+	visibility: hidden;
+}
+
+/* Narrow screens */
+@media (max-width: 960px) {
+	.ethcal-hero,
+	.ethcal-section {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 20px;
+	}
+	.ethcal-section__label,
+	.ethcal-preview {
+		flex-basis: auto;
+	}
+	.ethcal-admin {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
