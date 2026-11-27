@@ -50,6 +50,11 @@ final class Settings {
 	public const SURFACES = array( 'post_date', 'modified_date', 'comment_date' );
 
 	/**
+	 * Ethiopian date alone, or followed by the Gregorian date in brackets.
+	 */
+	public const DISPLAY_MODES = array( 'ethiopian', 'both' );
+
+	/**
 	 * Default settings for a fresh install.
 	 *
 	 * @return array<string, mixed>
@@ -64,6 +69,7 @@ final class Settings {
 			'convert'           => array_fill_keys( self::SURFACES, true ),
 			'calendar_language' => 'en',
 			'calendar_numerals' => 'arabic',
+			'display'           => 'ethiopian',
 		);
 	}
 
@@ -127,6 +133,9 @@ final class Settings {
 		}
 		if ( isset( $input['calendar_numerals'] ) && in_array( $input['calendar_numerals'], Formatter::NUMERALS, true ) ) {
 			$out['calendar_numerals'] = $input['calendar_numerals'];
+		}
+		if ( isset( $input['display'] ) && in_array( $input['display'], self::DISPLAY_MODES, true ) ) {
+			$out['display'] = $input['display'];
 		}
 		if ( isset( $input['convert'] ) && is_array( $input['convert'] ) ) {
 			foreach ( self::SURFACES as $surface ) {

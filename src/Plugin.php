@@ -8,8 +8,12 @@
 namespace EthiopianCalendar;
 
 use EthiopianCalendar\Admin\SettingsPage;
+use EthiopianCalendar\Api\RestController;
+use EthiopianCalendar\Blocks\Blocks;
 use EthiopianCalendar\Frontend\CalendarShortcode;
 use EthiopianCalendar\Frontend\DateFilters;
+use EthiopianCalendar\Frontend\Shortcodes;
+use EthiopianCalendar\Frontend\TodayWidget;
 
 /**
  * Wires the plugin into WordPress.
@@ -25,6 +29,10 @@ final class Plugin {
 		Settings::maybeMigrate();
 		DateFilters::register();
 		CalendarShortcode::register();
+		Shortcodes::register();
+		Blocks::register();
+		RestController::register();
+		TodayWidget::register();
 		if ( is_admin() ) {
 			SettingsPage::register();
 		}

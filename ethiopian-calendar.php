@@ -36,5 +36,7 @@ spl_autoload_register(
 	}
 );
 
+require __DIR__ . '/src/functions.php';
+
 register_activation_hook( __FILE__, array( \EthiopianCalendar\Plugin::class, 'activate' ) );
 add_action( 'plugins_loaded', array( \EthiopianCalendar\Plugin::class, 'boot' ) );

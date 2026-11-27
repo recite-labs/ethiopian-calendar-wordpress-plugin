@@ -28,4 +28,18 @@ if ( ! function_exists( 'get_option' ) ) {
 	function apply_filters( $hook, $value ) {
 		return $value;
 	}
+	function wp_timezone() {
+		return new DateTimeZone( 'Africa/Addis_Ababa' );
+	}
+	function current_datetime() {
+		return new DateTimeImmutable( 'now', wp_timezone() );
+	}
+	function wp_date( $format, $timestamp = null, $timezone = null ) {
+		return ( new DateTimeImmutable( '@' . ( $timestamp ?? time() ) ) )->setTimezone( $timezone ?? wp_timezone() )->format( $format );
+	}
 }
+
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', __DIR__ . '/' );
+}
+require_once dirname( __DIR__ ) . '/src/functions.php';

@@ -1,0 +1,72 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ethiopian-calendar/today",
+	"version": "2.0.0",
+	"title": "Ethiopian Date Today",
+	"category": "widgets",
+	"icon": "calendar-alt",
+	"description": "Today's date in the Ethiopian calendar.",
+	"keywords": [
+		"ethiopia",
+		"amharic",
+		"date",
+		"today",
+		"ቀን"
+	],
+	"textdomain": "ethiopian-calendar",
+	"attributes": {
+		"language": {
+			"type": "string",
+			"default": "",
+			"enum": [
+				"",
+				"en",
+				"am"
+			]
+		},
+		"numerals": {
+			"type": "string",
+			"default": "",
+			"enum": [
+				"",
+				"arabic",
+				"geez"
+			]
+		},
+		"format": {
+			"type": "string",
+			"default": ""
+		},
+		"display": {
+			"type": "string",
+			"default": "",
+			"enum": [
+				"",
+				"ethiopian",
+				"both"
+			]
+		},
+		"textAlign": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"align": false,
+		"color": {
+			"text": true,
+			"background": true
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"html": false
+	},
+	"editorScript": "ethiopian-calendar-blocks",
+	"style": "ethiopian-calendar-components"
+}

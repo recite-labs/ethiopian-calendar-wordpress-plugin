@@ -15,6 +15,9 @@
 
 	const i18n = window.ethiopianCalendarAdmin || {};
 	const previews = JSON.parse( form.querySelector( '[data-ethcal-previews]' ).textContent );
+	const gregorian = JSON.parse( form.querySelector( '[data-ethcal-gregorian]' ).textContent );
+	const withGregorian = ( text, which ) =>
+		'both' === field( 'display' ).value ? `${ text } (${ gregorian[ which ] })` : text;
 	const option = 'ethiopian_calendar_settings';
 	const field = ( key ) => form.querySelector( `[name="${ option }[${ key }]"]:checked` );
 	const customInput = form.querySelector( '[data-ethcal-custom]' );
@@ -68,11 +71,11 @@
 		if ( 'custom' === preset && customInput.value.trim() ) {
 			previewCustom( language, numerals ).then( ( data ) => {
 				if ( data ) {
-					sample.textContent = data.sample;
+					sample.textContent = withGregorian( data.sample, 'sample' );
 				}
 			} );
 		} else {
-			sample.textContent = ( set[ preset ] || set[ '1' ] ).sample;
+			sample.textContent = withGregorian( ( set[ preset ] || set[ '1' ] ).sample, 'sample' );
 			previewCustom( language, numerals );
 		}
 	}

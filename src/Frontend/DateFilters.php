@@ -8,7 +8,7 @@
 namespace EthiopianCalendar\Frontend;
 
 use DateTimeImmutable;
-use EthiopianCalendar\Calendar\EthiopianDate;
+use EthiopianCalendar\Dates;
 use EthiopianCalendar\Settings;
 
 /**
@@ -99,8 +99,7 @@ final class DateFilters {
 	 * @param DateTimeImmutable $time Time in the site timezone.
 	 */
 	public static function formatForDisplay( DateTimeImmutable $time ): string {
-		$settings = Settings::all();
-		return Settings::formatter( $settings )->format( Settings::formatString( $settings ), EthiopianDate::fromDateTime( $time ), $time );
+		return Dates::format( $time );
 	}
 
 	/**

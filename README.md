@@ -24,7 +24,14 @@ bin/build.sh         # dist/ethiopian-calendar.zip for release
 | `src/Calendar/GeezNumeral.php` | Ge'ez numerals |
 | `src/Settings.php` | Option schema, defaults, sanitizing, 1.x migration |
 | `src/Frontend/DateFilters.php` | Converts post, modified and comment dates (classic filters and blocks) |
+| `src/Calendar/EthiopianTime.php` | Ethiopian clock (hours counted from 6:00) |
+| `src/Dates.php` | Formats a moment with the site settings plus per-call overrides; used by everything below |
 | `src/Frontend/CalendarShortcode.php` | `[ethcalendar]` month view |
+| `src/Frontend/Components.php` | Today, any date, clock and converter markup shared by blocks, shortcodes and the widget |
+| `src/Frontend/Shortcodes.php`, `TodayWidget.php` | `[ethcal_*]` shortcodes and the classic widget |
+| `src/Blocks/Blocks.php`, `blocks/` | Dynamic blocks: `block.json` per block, one plain-JS editor script (`blocks/editor.js`), no build step |
+| `src/Api/RestController.php` | `ethiopian-calendar/v1` REST routes (`/convert`, `/today`) |
+| `src/functions.php` | Template functions for themes |
 | `src/Admin/SettingsPage.php` | Settings screen (previews rendered in PHP; `assets/js/admin.js` only swaps them in) |
 | `assets/css/admin.css`, `assets/js/admin.js` | Settings screen styles and progressive enhancement |
 | `.wordpress-org/` | Directory icon, banner and screenshots (deployed to SVN `/assets`, not shipped in the zip) |

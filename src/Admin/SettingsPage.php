@@ -10,6 +10,7 @@ namespace EthiopianCalendar\Admin;
 use DateTimeImmutable;
 use EthiopianCalendar\Calendar\EthiopianDate;
 use EthiopianCalendar\Calendar\Formatter;
+use EthiopianCalendar\Dates;
 use EthiopianCalendar\Plugin;
 use EthiopianCalendar\Settings;
 
@@ -158,7 +159,11 @@ final class SettingsPage {
 			}
 		}
 		$current        = $previews[ $settings['language'] ][ $settings['numerals'] ];
-		$sample_preview = self::formatTime( Settings::formatter( $settings ), Settings::formatString( $settings ), $sample['time'] );
+		$sample_preview = Dates::format( $sample['time'] );
+		$gregorian      = array(
+			'today'  => Dates::gregorian( $now ),
+			'sample' => Dates::gregorian( $sample['time'] ),
+		);
 		$surfaces       = array(
 			'post_date'     => array( __( 'Post published dates', 'ethiopian-calendar' ), __( 'Blog lists, single posts and archive pages', 'ethiopian-calendar' ) ),
 			'modified_date' => array( __( 'Post updated dates', 'ethiopian-calendar' ), __( '"Last updated" lines, where your theme shows them', 'ethiopian-calendar' ) ),
@@ -194,6 +199,7 @@ final class SettingsPage {
 			<form method="post" action="options.php" class="ethcal-form" data-ethcal-form>
 				<?php settings_fields( self::SLUG ); ?>
 				<script type="application/json" data-ethcal-previews><?php echo wp_json_encode( $previews ); ?></script>
+				<script type="application/json" data-ethcal-gregorian><?php echo wp_json_encode( $gregorian ); ?></script>
 
 				<section class="ethcal-section">
 					<div class="ethcal-section__label">
@@ -270,6 +276,19 @@ final class SettingsPage {
 						<p><?php esc_html_e( 'Feeds, sitemaps and search engines always get the Gregorian date.', 'ethiopian-calendar' ); ?></p>
 					</div>
 					<div class="ethcal-section__controls ethcal-switches">
+						<div class="ethcal-row ethcal-switches__mode">
+							<?php
+							self::segmented(
+								__( 'Show', 'ethiopian-calendar' ),
+								"{$name}[display]",
+								$settings['display'],
+								array(
+									'ethiopian' => __( 'Ethiopian only', 'ethiopian-calendar' ),
+									'both'      => __( 'Ethiopian + Gregorian', 'ethiopian-calendar' ),
+								)
+							);
+							?>
+						</div>
 						<?php foreach ( $surfaces as $key => [ $label, $help ] ) : ?>
 							<label class="ethcal-switch">
 								<input type="hidden" name="<?php echo esc_attr( $name ); ?>[convert][<?php echo esc_attr( $key ); ?>]" value="0">

@@ -316,6 +316,9 @@
 .ethcal-switches {
 	gap: 4px;
 }
+.ethcal-switches__mode {
+	margin-bottom: 12px;
+}
 .ethcal-switch {
 	position: relative;
 	display: flex;

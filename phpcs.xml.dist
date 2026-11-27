@@ -4,6 +4,7 @@
     <file>ethiopian-calendar.php</file>
     <file>uninstall.php</file>
     <file>src</file>
+    <file>blocks</file>
     <arg name="extensions" value="php"/>
     <arg name="colors"/>
     <arg value="sp"/>

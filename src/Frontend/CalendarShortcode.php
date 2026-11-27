@@ -31,11 +31,13 @@ final class CalendarShortcode {
 	 */
 	public static function register(): void {
 		add_shortcode( self::TAG, array( self::class, 'render' ) );
+		// Registered on init (before blocks) so the editor and the block's style field can use it.
 		add_action(
-			'wp_enqueue_scripts',
+			'init',
 			static function () {
 				wp_register_style( 'ethiopian-calendar', Plugin::url( 'assets/css/calendar.css' ), array(), Plugin::VERSION );
-			}
+			},
+			5
 		);
 	}
 

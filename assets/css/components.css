@@ -1,0 +1,72 @@
+/* Ethiopian Calendar front-end pieces. They inherit the theme's font and colours. */
+.ethcal-clock {
+	display: inline-flex;
+	flex-direction: column;
+	gap: 0.15em;
+	font-variant-numeric: tabular-nums;
+}
+.ethcal-clock__date {
+	font-size: 0.7em;
+	opacity: 0.75;
+}
+
+.ethcal-converter {
+	--ethcal-line: color-mix(in srgb, currentColor 18%, transparent);
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	gap: 1rem;
+	margin: 1.5rem 0;
+}
+.ethcal-converter__half {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	padding: 1.25rem;
+	border: 1px solid var(--ethcal-line);
+	border-radius: 12px;
+}
+.ethcal-converter__label {
+	font-size: 0.8em;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	opacity: 0.7;
+}
+.ethcal-converter__inputs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+.ethcal-converter input,
+.ethcal-converter select,
+.ethcal-converter button {
+	font: inherit;
+	padding: 0.45em 0.6em;
+	border: 1px solid var(--ethcal-line);
+	border-radius: 8px;
+	background: transparent;
+	color: inherit;
+}
+.ethcal-converter input[type="date"],
+.ethcal-converter select {
+	flex: 1 0 100%;
+	width: 100%;
+	box-sizing: border-box;
+}
+.ethcal-converter .ethcal-converter__day,
+.ethcal-converter .ethcal-converter__year {
+	flex: 1 1 0;
+	width: auto;
+	min-width: 0;
+	box-sizing: border-box;
+}
+.ethcal-converter__result {
+	display: block;
+	min-height: 1.5em;
+	font-size: 1.15em;
+	font-weight: 600;
+}
+.ethcal-converter__result.is-error {
+	font-weight: 400;
+	opacity: 0.75;
+}
