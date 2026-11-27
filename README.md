@@ -1,40 +1,34 @@
-# Ethiopian Calendar Wordpress plugin
+# Ethiopian Calendar for WordPress
 
+Show post and comment dates in the Ethiopian calendar, in English or Amharic, and add a month calendar with `[ethcalendar]`.
+Published on wordpress.org as [ethiopian-calendar](https://wordpress.org/plugins/ethiopian-calendar/). User-facing docs are in [readme.txt](readme.txt).
 
-``
-Bring Ethiopian calendar to your wordpress website.
-``
+## Development
 
-## Description
+Requires PHP 8.1+ and Composer.
 
-This plugin makes using Ethiopian Calendar in pages and posts a breeze. Install the plugin and use the setting to customize the format of the calendar. 
-![Setting image](./assets/screenshot-2.png)
+```bash
+composer install
+composer test        # PHPUnit: conversion checked against andegna/calender for every day 1900-2100
+composer lint        # WordPress coding standards + PHP compatibility
+bin/build.sh         # dist/ethiopian-calendar.zip for release
+```
 
-## Installation
+### Layout
 
-1. [Download](https://et.wordpress.org/plugins/ethiopian-calendar/) from the official wordpress plugin directory
-2. Activate
-3. Customize using the setting page
+| Path | What it does |
+| --- | --- |
+| `ethiopian-calendar.php` | Plugin header, autoloader, boot |
+| `src/Calendar/EthiopianDate.php` | Gregorian ↔ Ethiopian conversion via Julian Day Number |
+| `src/Calendar/Formatter.php` | Token formatting in English/Amharic, Arabic/Ge'ez numerals |
+| `src/Calendar/GeezNumeral.php` | Ge'ez numerals |
+| `src/Settings.php` | Option schema, defaults, sanitizing, 1.x migration |
+| `src/Frontend/DateFilters.php` | Converts post, modified and comment dates (classic filters and blocks) |
+| `src/Frontend/CalendarShortcode.php` | `[ethcalendar]` month view |
+| `src/Admin/SettingsPage.php` | Settings screen |
+
+The plugin has no runtime dependencies; `vendor/` is for development only and is not shipped.
 
 ## License
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
-
-
-
-
-
-
+GPL-2.0-or-later. See [LICENSE.txt](LICENSE.txt).
