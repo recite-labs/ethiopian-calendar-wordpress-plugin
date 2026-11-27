@@ -1,0 +1,82 @@
+/* Ethiopian Calendar month view. Inherits the theme's font and colours. */
+.ethcal {
+	--ethcal-accent: #0b7a5a;
+	--ethcal-muted: color-mix(in srgb, currentColor 55%, transparent);
+	--ethcal-line: color-mix(in srgb, currentColor 14%, transparent);
+	max-width: 28rem;
+	margin: 1.5rem auto;
+	border: 1px solid var(--ethcal-line);
+	border-radius: 12px;
+	padding: 1rem;
+	font-variant-numeric: tabular-nums;
+}
+.ethcal__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	margin-bottom: 0.75rem;
+}
+.ethcal__title {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+.ethcal__month {
+	font-size: 1.25em;
+	font-weight: 600;
+}
+.ethcal__gregorian {
+	font-size: 0.8em;
+	color: var(--ethcal-muted);
+}
+.ethcal__nav {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	border-radius: 50%;
+	font-size: 1.5em;
+	line-height: 1;
+	text-decoration: none;
+	color: inherit;
+}
+.ethcal__nav:hover,
+.ethcal__nav:focus-visible {
+	background: var(--ethcal-line);
+}
+.ethcal__grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 2px;
+}
+.ethcal__weekday {
+	text-align: center;
+	font-size: 0.75em;
+	font-weight: 600;
+	color: var(--ethcal-muted);
+	padding: 0.25rem 0;
+}
+.ethcal__day {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.35rem 0;
+	border-radius: 8px;
+}
+.ethcal__num {
+	font-size: 1em;
+}
+.ethcal__greg {
+	font-size: 0.65em;
+	color: var(--ethcal-muted);
+	white-space: nowrap;
+}
+.ethcal__day--today {
+	background: var(--ethcal-accent);
+	color: #fff;
+}
+.ethcal__day--today .ethcal__greg {
+	color: rgba(255, 255, 255, 0.85);
+}

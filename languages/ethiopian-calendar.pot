@@ -1,0 +1,418 @@
+# Copyright (C) 2026 Kibru Demeke
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ethiopian Calendar 2.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ethiopian-calendar\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-27T21:00:33+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: ethiopian-calendar\n"
+
+#. Plugin Name of the plugin
+#: ethiopian-calendar.php:3
+#: src/Admin/SettingsPage.php:51
+#: src/Admin/SettingsPage.php:52
+#: src/Admin/SettingsPage.php:174
+msgid "Ethiopian Calendar"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: ethiopian-calendar.php:4
+msgid "https://github.com/recite-labs/ethiopian-calendar-wordpress-plugin"
+msgstr ""
+
+#. Description of the plugin
+#: ethiopian-calendar.php:5
+msgid "Show post and comment dates in the Ethiopian calendar, in English or Amharic, and add a month calendar with the [ethcalendar] shortcode."
+msgstr ""
+
+#. Author of the plugin
+#: ethiopian-calendar.php:9
+msgid "Kibru Demeke"
+msgstr ""
+
+#. Author URI of the plugin
+#: ethiopian-calendar.php:10
+msgid "https://github.com/dkibru"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:93
+msgid "Copied"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:94
+#: src/Admin/SettingsPage.php:336
+msgid "Copy"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:95
+msgid "You have unsaved changes"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:96
+#: src/Admin/SettingsPage.php:343
+msgid "All changes saved"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:108
+#: blocks/editor.js:69
+msgid "Settings"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:168
+msgid "Post published dates"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:168
+msgid "Blog lists, single posts and archive pages"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:169
+msgid "Post updated dates"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:169
+msgid "\"Last updated\" lines, where your theme shows them"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:170
+msgid "Comment dates"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:170
+msgid "Under each comment"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:179
+msgid "Ethiopian Calendar · Today"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:187
+msgid "How readers see a post"
+msgstr ""
+
+#. translators: %s: the sample post's date in the Gregorian calendar.
+#: src/Admin/SettingsPage.php:193
+#, php-format
+msgid "Feeds and Google still see %s"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:206
+#: blocks/editor.js:94
+#: blocks/editor.js:108
+#: blocks/editor.js:126
+#: blocks/editor.js:138
+msgid "Language"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:207
+msgid "Month and weekday names, and the numbers they're written with."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:212
+#: src/Admin/SettingsPage.php:315
+msgid "Names"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:221
+#: src/Admin/SettingsPage.php:324
+#: blocks/editor.js:95
+#: blocks/editor.js:127
+#: blocks/editor.js:139
+msgid "Numbers"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:235
+#: src/Admin/SettingsPage.php:240
+msgid "Date format"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:236
+msgid "Shown with today's date. Pick one, or write your own with tokens."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:250
+msgid "Custom"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:252
+msgid "Custom format"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:258
+msgid "Token reference"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:260
+msgid "Day, with or without a leading zero"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:261
+msgid "Month number, with or without a leading zero"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:262
+msgid "Month name, full or short"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:263
+msgid "Year, four or two digits"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:264
+msgid "Weekday, full or short"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:265
+msgid "English ordinal suffix: st, nd, rd, th"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:266
+msgid "Era: E.C. or ዓ.ም."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:267
+msgid "Time tokens work as in WordPress. Use \\ to print a letter as is."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:275
+msgid "Where to show Ethiopian dates"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:276
+msgid "Feeds, sitemaps and search engines always get the Gregorian date."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:282
+#: blocks/editor.js:97
+msgid "Show"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:286
+#: blocks/editor.js:38
+msgid "Ethiopian only"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:287
+msgid "Ethiopian + Gregorian"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:308
+msgid "Month calendar"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:309
+msgid "Paste the shortcode into any page or post. Gregorian dates appear under each day."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:344
+msgid "Discard"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:345
+msgid "Save changes"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:398
+msgid "Your latest post"
+msgstr ""
+
+#: src/Api/RestController.php:101
+msgid "That Gregorian date does not exist."
+msgstr ""
+
+#: src/Api/RestController.php:107
+msgid "That Ethiopian date does not exist."
+msgstr ""
+
+#: src/Api/RestController.php:111
+msgid "Pass date (Gregorian) or ethiopian."
+msgstr ""
+
+#: src/Frontend/CalendarShortcode.php:85
+msgid "Previous month"
+msgstr ""
+
+#: src/Frontend/CalendarShortcode.php:90
+msgid "Next month"
+msgstr ""
+
+#: src/Frontend/Components.php:124
+msgid "That date does not exist."
+msgstr ""
+
+#: src/Frontend/Components.php:132
+msgid "Gregorian date"
+msgstr ""
+
+#: src/Frontend/Components.php:135
+#: src/Frontend/Components.php:149
+msgid "Convert"
+msgstr ""
+
+#: src/Frontend/Components.php:140
+msgid "Ethiopian date"
+msgstr ""
+
+#: src/Frontend/Components.php:142
+msgid "Month"
+msgstr ""
+
+#: src/Frontend/Components.php:147
+msgid "Day"
+msgstr ""
+
+#: src/Frontend/Components.php:148
+msgid "Year"
+msgstr ""
+
+#: src/Frontend/TodayWidget.php:23
+msgid "Ethiopian Date Today"
+msgstr ""
+
+#: src/Frontend/TodayWidget.php:25
+msgid "Today's date in the Ethiopian calendar, with the Ethiopian clock if you like."
+msgstr ""
+
+#: src/Frontend/TodayWidget.php:70
+msgid "Title:"
+msgstr ""
+
+#: src/Frontend/TodayWidget.php:74
+msgid "Language:"
+msgstr ""
+
+#: src/Frontend/TodayWidget.php:76
+#: blocks/editor.js:19
+#: blocks/editor.js:24
+#: blocks/editor.js:29
+#: blocks/editor.js:37
+msgid "Site setting"
+msgstr ""
+
+#: src/Frontend/TodayWidget.php:83
+msgid "Show the Ethiopian clock"
+msgstr ""
+
+#: blocks/editor.js:39
+msgid "Ethiopian and Gregorian"
+msgstr ""
+
+#: blocks/editor.js:96
+msgid "Format"
+msgstr ""
+
+#: blocks/editor.js:111
+msgid "Show today's date"
+msgstr ""
+
+#: blocks/calendar/block.json
+msgctxt "block title"
+msgid "Ethiopian Month Calendar"
+msgstr ""
+
+#: blocks/calendar/block.json
+msgctxt "block description"
+msgid "A month calendar in the Ethiopian calendar, with Gregorian dates under each day."
+msgstr ""
+
+#: blocks/calendar/block.json
+#: blocks/clock/block.json
+#: blocks/converter/block.json
+#: blocks/today/block.json
+msgctxt "block keyword"
+msgid "ethiopia"
+msgstr ""
+
+#: blocks/calendar/block.json
+msgctxt "block keyword"
+msgid "calendar"
+msgstr ""
+
+#: blocks/calendar/block.json
+msgctxt "block keyword"
+msgid "month"
+msgstr ""
+
+#: blocks/calendar/block.json
+#: blocks/today/block.json
+msgctxt "block keyword"
+msgid "amharic"
+msgstr ""
+
+#: blocks/clock/block.json
+msgctxt "block title"
+msgid "Ethiopian Clock"
+msgstr ""
+
+#: blocks/clock/block.json
+msgctxt "block description"
+msgid "The current time on the Ethiopian clock, where the day starts at 6:00."
+msgstr ""
+
+#: blocks/clock/block.json
+msgctxt "block keyword"
+msgid "time"
+msgstr ""
+
+#: blocks/clock/block.json
+msgctxt "block keyword"
+msgid "clock"
+msgstr ""
+
+#: blocks/clock/block.json
+msgctxt "block keyword"
+msgid "ሰዓት"
+msgstr ""
+
+#: blocks/converter/block.json
+msgctxt "block title"
+msgid "Ethiopian Date Converter"
+msgstr ""
+
+#: blocks/converter/block.json
+msgctxt "block description"
+msgid "Lets visitors convert dates between the Gregorian and Ethiopian calendars."
+msgstr ""
+
+#: blocks/converter/block.json
+msgctxt "block keyword"
+msgid "convert"
+msgstr ""
+
+#: blocks/converter/block.json
+msgctxt "block keyword"
+msgid "gregorian"
+msgstr ""
+
+#: blocks/converter/block.json
+#: blocks/today/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr ""
+
+#: blocks/today/block.json
+msgctxt "block title"
+msgid "Ethiopian Date Today"
+msgstr ""
+
+#: blocks/today/block.json
+msgctxt "block description"
+msgid "Today's date in the Ethiopian calendar."
+msgstr ""
+
+#: blocks/today/block.json
+msgctxt "block keyword"
+msgid "today"
+msgstr ""
+
+#: blocks/today/block.json
+msgctxt "block keyword"
+msgid "ቀን"
+msgstr ""

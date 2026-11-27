@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ethiopian-calendar/clock",
+	"version": "2.0.0",
+	"title": "Ethiopian Clock",
+	"category": "widgets",
+	"icon": "clock",
+	"description": "The current time on the Ethiopian clock, where the day starts at 6:00.",
+	"keywords": [
+		"ethiopia",
+		"time",
+		"clock",
+		"ሰዓት"
+	],
+	"textdomain": "ethiopian-calendar",
+	"attributes": {
+		"language": {
+			"type": "string",
+			"default": "",
+			"enum": [
+				"",
+				"en",
+				"am"
+			]
+		},
+		"showDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"textAlign": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"align": false,
+		"color": {
+			"text": true,
+			"background": true
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"html": false
+	},
+	"editorScript": "ethiopian-calendar-blocks",
+	"style": "ethiopian-calendar-components",
+	"viewScript": "ethiopian-calendar-clock"
+}

@@ -1,0 +1,58 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ethiopian-calendar/calendar",
+	"version": "2.0.0",
+	"title": "Ethiopian Month Calendar",
+	"category": "widgets",
+	"icon": "calendar",
+	"description": "A month calendar in the Ethiopian calendar, with Gregorian dates under each day.",
+	"keywords": [
+		"ethiopia",
+		"calendar",
+		"month",
+		"amharic"
+	],
+	"textdomain": "ethiopian-calendar",
+	"attributes": {
+		"language": {
+			"type": "string",
+			"default": "",
+			"enum": [
+				"",
+				"en",
+				"am"
+			]
+		},
+		"numerals": {
+			"type": "string",
+			"default": "",
+			"enum": [
+				"",
+				"arabic",
+				"geez"
+			]
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"color": {
+			"text": true,
+			"background": true
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"html": false
+	},
+	"editorScript": "ethiopian-calendar-blocks",
+	"style": "ethiopian-calendar"
+}

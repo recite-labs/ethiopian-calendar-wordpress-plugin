@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ruleset name="Ethiopian Calendar">
+    <description>WordPress coding standards for the Ethiopian Calendar plugin.</description>
+    <file>ethiopian-calendar.php</file>
+    <file>uninstall.php</file>
+    <file>src</file>
+    <file>blocks</file>
+    <arg name="extensions" value="php"/>
+    <arg name="colors"/>
+    <arg value="sp"/>
+
+    <config name="testVersion" value="8.1-"/>
+    <config name="minimum_wp_version" value="6.4"/>
+    <rule ref="PHPCompatibilityWP"/>
+
+    <rule ref="WordPress">
+        <!-- PSR-4 file and method names instead of WordPress class-*.php / snake_case. -->
+        <exclude name="WordPress.Files.FileName"/>
+        <exclude name="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid"/>
+        <exclude name="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase"/>
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
+    </rule>
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array">
+                <element value="ethiopian-calendar"/>
+            </property>
+        </properties>
+    </rule>
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+        <properties>
+            <property name="prefixes" type="array">
+                <element value="ethiopian_calendar"/>
+                <element value="EthiopianCalendar"/>
+            </property>
+        </properties>
+    </rule>
+</ruleset>
